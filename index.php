@@ -76,13 +76,13 @@ require_once $SETTINGS['cpassman_dir'] . '/includes/config/include.php';
 if (isset($SETTINGS['cpassman_version']) === true && version_compare(TP_VERSION, $SETTINGS['cpassman_version']) > 0) {
     // Perform redirection
     if (headers_sent()) {
-        echo '<script language="javascript" type="text/javascript">document.location.replace("install/install.php");</script>';
+    echo '<script language="javascript" type="text/javascript">document.location.replace("install/install.php");</script>';
     } else {
-        header('Location: install/upgrade.php');
+    header('Location: install/upgrade.php');
     }
     // No other way, we should stop processing further
     exit;
-}
+    }
 
 require_once $SETTINGS['cpassman_dir'] . '/includes/libraries/protect/SuperGlobal/SuperGlobal.php';
 $superGlobal = new protect\SuperGlobal\SuperGlobal();
